@@ -9,10 +9,14 @@ import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
 import { ShaderPass } from "three/examples/jsm/postprocessing/ShaderPass.js";
 import { OutputPass } from "three/examples/jsm/postprocessing/OutputPass.js";
 import Stats from "three/examples/jsm/libs/stats.module";
+import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader';
 import { TransformControls } from "three/examples/jsm/controls/TransformControls.js";
 
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 const loader = new GLTFLoader();
+const dracoLoader = new DRACOLoader();
+dracoLoader.setDecoderPath('https://www.gstatic.com/draco/v1/decoders/');
+loader.setDRACOLoader(dracoLoader);
 
 let models = [];
 let lights = [];
@@ -410,7 +414,7 @@ export async function InitThreeJS(resolve = null) {
     // setupPostProcessing();
 
     // Load the 3D model and wait for it to finish
-    await loadModelGLTF("3d/test.glb", (fbx) => {
+    await loadModelGLTF("3d/test.compressed.glb", (fbx) => {
       // Center and scale the model
       const box = new THREE.Box3().setFromObject(fbx);
       const center = box.getCenter(new THREE.Vector3());
