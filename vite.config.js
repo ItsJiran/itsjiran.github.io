@@ -1,5 +1,7 @@
 // vite.config.js
 import { defineConfig } from "vite";
+import { viteStaticCopy } from 'vite-plugin-static-copy';
+
 import tailwindcss from "@tailwindcss/vite"; // Import the Tailwind CSS Vite plugin
 import { resolve } from 'path';
 
@@ -17,5 +19,15 @@ export default defineConfig({
       },
     },
   },
-  plugins: [tailwindcss()],
+  plugins: [
+    tailwindcss(),
+    viteStaticCopy({
+      targets: [
+        {
+          src: 'src/**/*.js', // This glob pattern finds all .js files in all subdirectories of 'src'
+          dest: '.', // Copies them to the root of the 'dist' directory, maintaining their original folder structure
+        },
+      ],
+    }),
+  ],
 });
