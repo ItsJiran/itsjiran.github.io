@@ -1,0 +1,186 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
+
+@import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-selection {
+  background-color: rgb(55, 53, 56);
+  color: #fff;
+}
+
+/* For Firefox */
+::-moz-selection {
+  background-color: rgb(55, 53, 56);
+  color: #fff;
+}
+
+/* For other browsers */
+::selection {
+  background-color: rgb(55, 53, 56);
+  color: #fff;
+}
+
+@keyframes slide-down {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.slide-down-animation {
+  animation: slide-down 0.5s ease-out forwards;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Oswald", sans-serif;
+}
+body {
+}
+
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.705);
+  pointer-events: none; /* Allows clicks to pass through */
+  transition:
+    transform 0.2s ease-out,
+    border-radius 0.2s ease-out;
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Centers the cursor on the mouse pointer */
+}
+
+/* New hover effect to transform the circle into a rotated cube */
+.custom-cursor.hover-effect {
+  border-radius: 0; /* Changes the shape to a square */
+  transform: translate(-50%, -50%) rotate(45deg); /* Rotates the square 45 degrees */
+  width: 35px; /* Slightly increase size for a more visible effect */
+  height: 35px;
+}
+
+.custom-cursor.hover-effect::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px; /* Small circle size */
+  height: 12px;
+  background-color: white;
+  /* border-radius: 50%; */
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  transition:
+    opacity 0.2s ease-out,
+    transform 0.2s ease-out;
+}
+
+.custom-cursor.active {
+  background-color: rgba(255, 255, 255, 0.4);
+  transform: translate(-50%, -50%) scale(1.5);
+  border: 2px solid rgba(255, 255, 255, 0);
+  width: 30px;
+  height: 30px;
+}
+
+.ray-big {
+  background-position-x: 50%, 50%;
+  background-position-y: 50%, 50%;
+  background-repeat: repeat;
+  background-size: 300%, 200%;
+  background-color: rgba(0, 0, 0, 0);
+  background-image:
+    repeating-linear-gradient(
+      130deg,
+      rgb(0, 0, 0) 0%,
+      rgb(0, 0, 0) 7%,
+      rgba(0, 0, 0, 0) 10%,
+      rgba(0, 0, 0, 0) 12%,
+      rgb(0, 0, 0) 16%
+    ),
+    repeating-linear-gradient(
+      130deg,
+      rgb(145, 145, 145) 10%,
+      rgb(145, 145, 145) 15%,
+      rgb(108, 108, 108) 20%,
+      rgb(255, 255, 255) 25%,
+      rgb(96, 97, 98) 30%
+    );
+  mask-image: radial-gradient(
+    at 100% 0px,
+    rgb(0, 0, 0) 10%,
+    rgba(0, 0, 0, 0) 70%
+  );
+  mask-repeat: repeat;
+  animation-name: aurora;
+  animation-duration: 60s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
+}
+
+@media screen and (max-width: 800px) {
+  .ray-big {
+    background-size: 350%, 250%;
+    background-image:
+      repeating-linear-gradient(
+        100deg,
+        rgb(0, 0, 0) 0%,
+        rgb(0, 0, 0) 7%,
+        rgba(0, 0, 0, 0) 10%,
+        rgba(0, 0, 0, 0) 12%,
+        rgb(0, 0, 0) 16%
+      ),
+      repeating-linear-gradient(
+        100deg,
+        rgb(145, 145, 145) 10%,
+        rgb(145, 145, 145) 15%,
+        rgb(108, 108, 108) 20%,
+        rgb(255, 255, 255) 25%,
+        rgb(96, 97, 98) 30%
+      );
+    mask-image: radial-gradient(
+      at 100% 0px,
+      rgb(0, 0, 0) 10%,
+      rgba(0, 0, 0, 0) 70%
+    );
+    animation-duration: 0s;
+  }
+}
+
+@keyframes aurora {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+.diagonal-stripes {
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 0%,
+    transparent 40%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0.09) 50%,
+    transparent 50%,
+    transparent
+  );
+  background-size: 20px 20px;
+}
