@@ -24,8 +24,16 @@ export default defineConfig({
     viteStaticCopy({
       targets: [
         {
-          src: 'src/**/*.js', // This glob pattern finds all .js files in all subdirectories of 'src'
-          dest: '.', // Copies them to the root of the 'dist' directory, maintaining their original folder structure
+          src: 'pages/*.js', // This glob pattern finds all .js files in all subdirectories of 'src'
+          dest: 'pages', // Copies them to the root of the 'dist' directory, maintaining their original folder structure
+        },
+        {
+          src: 'pages/contents', // This glob pattern finds all .js files in all subdirectories of 'src'
+          dest: 'pages', // Copies them to the root of the 'dist' directory, maintaining their original folder structure
+        },
+        {
+          src: 'pages/display', // This glob pattern finds all .js files in all subdirectories of 'src'
+          dest: 'pages', // Copies them to the root of the 'dist' directory, maintaining their original folder structure
         },
       ],
     }),
