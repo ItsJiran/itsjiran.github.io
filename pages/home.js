@@ -115,8 +115,8 @@ function setupScene() {
   container.appendChild(renderer.domElement);
 
   // Stats for performance monitoring
-  stats = new Stats();
-  container.appendChild(stats.dom);
+  // stats = new Stats();
+  // container.appendChild(stats.dom);
 }
 
 // Setup lighting
@@ -496,22 +496,22 @@ export async function InitThreeJS(resolve = null) {
 export async function InitPage(resolve = null) {
   // GSAP ScrollTrigger setup
 
-  ScrollTrigger.create({
-    trigger: "#my-section",
-    pin: true,
-    start: "top top",
-    endTrigger: "#container",
-    end: "bottom bottom",
-    markers: true,
-    smooth: 1,
-    onLeave: () => {
-      gsap.set("#my-section", {
-        position: "absolute",
-        top: "0",
-        bottom: 0,
-      });
-    },
-  });
+  // ScrollTrigger.create({
+  //   trigger: "#my-section",
+  //   pin: true,
+  //   start: "top top",
+  //   endTrigger: "#container",
+  //   end: "bottom bottom",
+  //   markers: true,
+  //   smooth: 1,
+  //   onLeave: () => {
+  //     gsap.set("#my-section", {
+  //       position: "absolute",
+  //       top: "0",
+  //       bottom: 0,
+  //     });
+  //   },
+  // });
 
   await InitThreeJS();
   // Acknowledge the request
@@ -559,6 +559,7 @@ export async function InitPage(resolve = null) {
       ease: "power3.inOut",
       onStart: () => {
         window.lenis.stop();
+        document.getElementsByTagName('html')[0].classList.add('overflow-y-hidden');
         // Immediately show the skeleton loader and clear any old content
         loader.classList.remove("hidden");
         newPageContent.classList.add("hidden");
@@ -611,6 +612,7 @@ export async function InitPage(resolve = null) {
       ease: "power3.inOut",
       onComplete: () => {
         // Clear the content after the transition is complete
+        document.getElementsByTagName('html')[0].classList.remove('overflow-y-hidden');
         newPageContent.innerHTML = "";
         window.lenis.start();
       },
