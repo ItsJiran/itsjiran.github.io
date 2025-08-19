@@ -6,7 +6,6 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { appState } from "/scripts/state_manager";
 import * as promises from "/scripts/vite/promises";
-
 const loadingScreen = document.getElementById("loading-screen");
 const appContent = document.getElementById("app");
 
@@ -14,6 +13,7 @@ const lenis = new Lenis({
   wheelMultiplier: 0.4, // This value controls the scroll speed.
   // ... other options
 });
+gsap.registerPlugin(ScrollTrigger);
 
 window.lenis = lenis;
 
@@ -101,6 +101,7 @@ const jsFilePromises = jsFilesToWatch.map(
 );
 
 const coreDependencies = [
+  
   // Watcher for GSAP
   new Promise((resolve, reject) => {
     if (gsap) {
@@ -133,6 +134,7 @@ const coreDependencies = [
       onComplete: resolve,
     });
   }),
+
 ];
 
 // Combine all promises (JS files + core dependencies)
@@ -146,7 +148,59 @@ promises
     console.log(
       "All dependencies loaded concurrently. Showing loading screen.",
     );
+
     document.body.style.opacity = "1";
+
+    let mm = gsap.matchMedia();
+
+    mm.add({
+      // Tailwind's default breakpoints
+      isSmall: "(min-width: 640px)",     // sm
+      isMedium: "(min-width: 768px)",    // md
+      isLarge: "(min-width: 1024px)",    // lg
+      isXLarge: "(min-width: 1280px)",   // xl
+      is2XLarge: "(min-width: 1536px)" , // 2xl
+      isMobile: "(max-width: 639px)"     // Below sm
+    }, (context) => {
+      let { isSmall, isMedium, isLarge, isXLarge, is2XLarge, isMobile } = context.conditions;
+    
+      
+      if(isSmall){
+        ScrollTrigger.create({
+          start: "top -100", // Change this value to adjust when the animation triggers
+          end: 99999, // A large number to make sure it only triggers once
+          onEnter: () => {
+            navbar.classList.add("bg-[#101010]");
+            navbar.classList.add("border");
+          },
+          onLeaveBack: () => {
+            navbar.classList.remove("bg-[#101010]");
+            navbar.classList.remove("border");
+          },
+        });
+      }
+
+      if(isMobile){
+        ScrollTrigger.create({
+          start: "top -100", // Change this value to adjust when the animation triggers
+          end: 99999, // A large number to make sure it only triggers once
+          onEnter: () => {
+            gsap.to(navbar, { y: -20, duration: 0.5 });
+            navbar.classList.add("bg-[#101010]");
+            navbar.classList.add("border-b");
+          },
+          onLeaveBack: () => {
+            gsap.to(navbar, { y: 0, duration: 0.5 });
+            navbar.classList.remove("bg-[#101010]");
+            navbar.classList.remove("border-b");
+          },
+        });
+      }
+
+    });
+
+
+
   })
   .catch((error) => {
     console.error("Failed to load some dependencies:", error);

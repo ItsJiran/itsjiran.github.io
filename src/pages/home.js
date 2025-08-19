@@ -9,10 +9,14 @@ import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
 import { ShaderPass } from "three/examples/jsm/postprocessing/ShaderPass.js";
 import { OutputPass } from "three/examples/jsm/postprocessing/OutputPass.js";
 import Stats from "three/examples/jsm/libs/stats.module";
+import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader';
 import { TransformControls } from "three/examples/jsm/controls/TransformControls.js";
 
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 const loader = new GLTFLoader();
+const dracoLoader = new DRACOLoader();
+dracoLoader.setDecoderPath('https://www.gstatic.com/draco/v1/decoders/');
+loader.setDRACOLoader(dracoLoader);
 
 let models = [];
 let lights = [];
@@ -111,8 +115,8 @@ function setupScene() {
   container.appendChild(renderer.domElement);
 
   // Stats for performance monitoring
-  stats = new Stats();
-  container.appendChild(stats.dom);
+  // stats = new Stats();
+  // container.appendChild(stats.dom);
 }
 
 // Setup lighting
@@ -410,7 +414,7 @@ export async function InitThreeJS(resolve = null) {
     // setupPostProcessing();
 
     // Load the 3D model and wait for it to finish
-    await loadModelGLTF("3d/test.glb", (fbx) => {
+    await loadModelGLTF("3d/test.compressed.glb", (fbx) => {
       // Center and scale the model
       const box = new THREE.Box3().setFromObject(fbx);
       const center = box.getCenter(new THREE.Vector3());
@@ -492,22 +496,22 @@ export async function InitThreeJS(resolve = null) {
 export async function InitPage(resolve = null) {
   // GSAP ScrollTrigger setup
 
-  ScrollTrigger.create({
-    trigger: "#my-section",
-    pin: true,
-    start: "top top",
-    endTrigger: "#container",
-    end: "bottom bottom",
-    markers: true,
-    smooth: 1,
-    onLeave: () => {
-      gsap.set("#my-section", {
-        position: "absolute",
-        top: "0",
-        bottom: 0,
-      });
-    },
-  });
+  // ScrollTrigger.create({
+  //   trigger: "#my-section",
+  //   pin: true,
+  //   start: "top top",
+  //   endTrigger: "#container",
+  //   end: "bottom bottom",
+  //   markers: true,
+  //   smooth: 1,
+  //   onLeave: () => {
+  //     gsap.set("#my-section", {
+  //       position: "absolute",
+  //       top: "0",
+  //       bottom: 0,
+  //     });
+  //   },
+  // });
 
   await InitThreeJS();
   // Acknowledge the request
@@ -555,6 +559,7 @@ export async function InitPage(resolve = null) {
       ease: "power3.inOut",
       onStart: () => {
         window.lenis.stop();
+        document.getElementsByTagName('html')[0].classList.add('overflow-y-hidden');
         // Immediately show the skeleton loader and clear any old content
         loader.classList.remove("hidden");
         newPageContent.classList.add("hidden");
@@ -607,6 +612,7 @@ export async function InitPage(resolve = null) {
       ease: "power3.inOut",
       onComplete: () => {
         // Clear the content after the transition is complete
+        document.getElementsByTagName('html')[0].classList.remove('overflow-y-hidden');
         newPageContent.innerHTML = "";
         window.lenis.start();
       },

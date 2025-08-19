@@ -1,7 +1,8 @@
 // tailwind.config.js
 module.exports = {
   content: [
-    "./index.html",
+    "./*.html",
+    "./**/*.html", // <--- Make sure this line is correct
     "./src/**/**/*.html", // <--- Make sure this line is correct
     "./src/**/*.{js,ts,jsx,tsx,html}", // <--- Make sure this line is correct
   ],

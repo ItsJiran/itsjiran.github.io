@@ -55,7 +55,7 @@ export async function loadPage(path, resolve = null) {
 
 // Function to handle link clicks
 
-window.addEventListener('popstate', handleRouting);
+// window.addEventListener('popstate', handleRouting);
 
 export function route(event) {
   event = event || window.event;

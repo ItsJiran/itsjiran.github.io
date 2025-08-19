@@ -5,22 +5,13 @@ import { viteStaticCopy } from 'vite-plugin-static-copy';
 import tailwindcss from "@tailwindcss/vite"; // Import the Tailwind CSS Vite plugin
 import { resolve } from 'path';
 
-export default defineConfig({
-  root: resolve(__dirname, 'src'),
-  publicDir: "public", // Vite looks for this folder inside the root, so it's 'src/public'
-  build: {
-    outDir: "./dist",
-    rollupOptions: {
-      // Define the entry point for the application.
-      // Vite will bundle all dependencies starting from this file.
-      input: {
-        main: resolve(__dirname, 'src/index.html'),
-        // home: resolve(__dirname, 'src/pages/scripts/home.js')
-      },
-    },
-  },
-  plugins: [
-    tailwindcss(),
+
+// The `plugins` array is now conditionally populated
+let plugins = [tailwindcss];
+
+// Check if the current mode is production
+if (process.env.NODE_ENV === 'production') {
+  plugins.push(
     viteStaticCopy({
       targets: [
         {
@@ -37,5 +28,22 @@ export default defineConfig({
         },
       ],
     }),
-  ],
+  );
+}
+
+export default defineConfig({
+  root: resolve(__dirname, 'src'),
+  publicDir: "public", // Vite looks for this folder inside the root, so it's 'src/public'
+  build: {
+    outDir: "./dist",
+    rollupOptions: {
+      // Define the entry point for the application.
+      // Vite will bundle all dependencies starting from this file.
+      input: {
+        main: resolve(__dirname, 'src/index.html'),
+        // home: resolve(__dirname, 'src/pages/home.js')
+      },
+    },
+  },
+  plugins: plugins,
 });

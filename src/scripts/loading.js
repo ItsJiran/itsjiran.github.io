@@ -10,7 +10,7 @@ const appContent = document.getElementById("app");
 
 const jsFilesToWatch = [
   // { src: "/scripts/routing.js", id: "routing-script" },
-  //   { src: "/scripts/other-utility.js", id: "other-utility-script" },
+  // { src: "/scripts/other-utility.js", id: "other-utility-script" },
 ];
 
 // Create an array of Promises to track the loading of each JS file
@@ -62,10 +62,32 @@ promises
       },
     });
 
+
+    tl.to(
+      document.getElementById('main-loading-svg'),
+      {
+        opacity: 0, // Fade in the main content
+        duration: 1, // Animation duration
+        ease: "power2.out", // Easing function
+      },
+      "-=50",
+    );
+
+    tl.to(
+      document.getElementById('main-loading-finish-svg'),
+      {
+        opacity: 1, // Fade in the main content
+        duration: 2, // Animation duration
+        ease: "power2.out", // Easing function
+      },
+      "-=50",
+    );
+
     // Animate the loading overlay to slide down
     tl.to(loadingScreen, {
       yPercent: 100, // Moves the element down by 100% of its own height
-      duration: 1.2, // Animation duration
+        delay:1,
+        duration: 1.2, // Animation duration
       ease: "power3.inOut", // Easing function for smooth animation
     });
 
