@@ -496,6 +496,25 @@ export async function InitThreeJS(resolve = null) {
 export async function InitPage(resolve = null) {
   // GSAP ScrollTrigger setup
 
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault(); // Prevents the default jump to the anchor
+    
+        if( anchor.classList.contains('sidebar-menu') ) {
+          window.closeNavbar();
+        }
+
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+          window.lenis.scrollTo(targetElement, {
+              offset: -100
+          });
+        }
+      });
+    });
+
   // ScrollTrigger.create({
   //   trigger: "#my-section",
   //   pin: true,
