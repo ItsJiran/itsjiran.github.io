@@ -45,6 +45,9 @@ function closeNavbar() {
   });
 }
 
+window.openNavbar = openNavbar;
+window.closeNavbar = closeNavbar;
+
 gsap.set(sidebar, {
   x: "100vw", // Slide the overlay down and off the screen
   duration: 0.8,
