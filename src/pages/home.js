@@ -11,6 +11,7 @@ import { OutputPass } from "three/examples/jsm/postprocessing/OutputPass.js";
 import Stats from "three/examples/jsm/libs/stats.module";
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader';
 import { TransformControls } from "three/examples/jsm/controls/TransformControls.js";
+import Typed from 'typed.js';
 
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 const loader = new GLTFLoader();
@@ -495,6 +496,38 @@ export async function InitThreeJS(resolve = null) {
 // Initialize the main page with GSAP and Three.js
 export async function InitPage(resolve = null) {
   // GSAP ScrollTrigger setup
+  const options1 = {
+    strings: ['HELLO.'],
+    typeSpeed: 50,
+    startDelay: 3000,
+    showCursor: true,
+    cursorChar: '|',
+    loop: false,
+    onComplete: (self) => {
+      self.cursor.style.display = 'none';
+      const options2 = {
+        strings: ['WELCOME'],
+        typeSpeed: 50,
+        showCursor: true,
+        cursorChar: '|',
+        loop: false,
+        onComplete: (self) => {
+          self.cursor.style.display = 'none';
+          const options3 = {
+            strings: ['My name is Jibril Gilang Ramadhan. I am a full-stack developer who thrives on building complete, end-to-end solutions. My work spans the entire development lifecycle, from architecting scalable back-end APIs to crafting intuitive and responsive front-end interfaces.'],
+            typeSpeed: 10,
+            showCursor: true,
+            cursorChar: '|',
+            loop: false,
+          };
+          const typed3 = new Typed('#home-text-3', options3);
+        }
+      };
+      const typed2 = new Typed('#home-text-2', options2);
+    }
+  };
+  const typed1 = new Typed('#home-text-1', options1);
+
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
