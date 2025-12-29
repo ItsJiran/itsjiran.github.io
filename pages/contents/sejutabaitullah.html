@@ -1,0 +1,679 @@
+<section
+  class="md:px-[20px] min-h-full bg-[#101010] transition duration-300 border-t border-white/20 bg-gradient-to-tr from-[rgba(16,16,16,0.2)] to-[rgba(76,76,76,0.2)] text-white w-full text-4xl relative">
+    <style>
+      .tech-stack-icon {
+        position: relative;
+        width: 48px;
+        height: 48px;
+        border-radius: 9999px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        background: rgba(255, 255, 255, 0.05);
+      }
+      .tech-stack-icon img {
+        width: 26px;
+        height: 26px;
+      }
+      .tech-stack-icon::after {
+        content: attr(data-label);
+        position: absolute;
+        bottom: -1.75rem;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(16, 16, 16, 0.9);
+        color: #fff;
+        padding: 0.15rem 0.6rem;
+        border-radius: 9999px;
+        font-size: 0.65rem;
+        letter-spacing: 0.08em;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s ease;
+        white-space: nowrap;
+      }
+      .tech-stack-icon:hover {
+        border-color: rgba(255, 255, 255, 0.7);
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.25);
+      }
+      .tech-stack-icon:hover::after {
+        opacity: 1;
+      }
+    </style>
+  <div
+    class="xl:mx-auto min-h-screen max-w-[900px] md:border-l md:border-r border-[#454545]/50 mx-auto w-full px-[5px] sm:px-[10px] md:px-[20px] overflow-auto" data-lenis-prevent>
+    <div class="w-full min-h-screen border-l border-r border-[#454545]/50 relative">
+      <!-- DOTS IMAGE -->
+      <div class="px-[50px] w-full h-full absolute top-0 left-0">
+        <div
+          class="bg-[radial-gradient(circle,rgba(255,255,255,0.05)_1px,transparent_3px)] bg-[length:25px_25px] bg-repeat w-full h-full top-0 left-0">
+        </div>
+      </div>
+
+      <!-- SECTION 1 HEADER -->
+      <div class="py-[40px] px-[30px] flex flex-col relative">
+        <div class="flex items-center gap-2">
+          <label class="text-base font-regular font-oswald text-white/70">SHOWCASE</label>
+          <div class="h-[0px] w-full border-b border-white/20"></div>
+        </div>
+      </div>
+
+      <div
+        class="bg-[repeating-linear-gradient(-40deg,#484848_0,#2e2e2e_1px,#2d2d2d00_1px,transparent_20px)] p-[5px] border-t border-white/10 border-b flex flex-col relative">
+      </div>
+
+      <div class="mx-2 my-2 rounded overflow-hidden aspect-video relative">
+        <a
+          class="gallery-lightbox block w-full h-full"
+          data-gallery="sejutabaitullah"
+          data-glightbox="title:SejutaBaitullah Referral App; description:Preview of the referral dashboard"
+          href="/public/assets/sejutabaitullah/Frame_5_1_ckszbf_c_scale,w_807.png">
+          <img
+            class="w-full h-full object-cover lazyload transform transition-transform duration-500 ease-in-out hover:scale-110 pointer-events-auto"
+            data-src="/public/assets/sejutabaitullah/Frame_5_1_ckszbf_c_scale,w_807.png" alt="A scenic postcard image" />
+        </a>
+      </div>
+
+      <div
+        class="bg-[repeating-linear-gradient(-40deg,#484848_0,#2e2e2e_1px,#2d2d2d00_1px,transparent_20px)] p-[5px] border-t border-white/10 border-b flex flex-col relative">
+      </div>
+
+      <!-- BLOG CONTENT -->
+      <div class="flex flex-col gap-1.5 p-4 relative">
+        <div class="flex flex-col gap-1.5">
+            <div class="text-base space-y-1 text-white/80">
+              <p class="font-semibold text-white text-lg">Judul Project: Sejuta Baitullah · Financial & Referral Platform</p>
+              <p>Role: Fullstack Engineer</p>
+              <div class="flex flex-wrap gap-2 mt-2">
+                <a href="https://sejutabaitullah.id" target="_blank" class="px-3 py-1 border border-white/40 rounded-full text-xs font-semibold hover:border-white">Live App</a>
+              </div>
+              <div class="flex items-center gap-2 mt-4 flex-wrap">
+                <div class="text-xs font-semibold uppercase tracking-[0.3em] text-white/60">Tech Stack</div>
+                <div class="flex gap-2">
+                  <div class="tech-stack-icon" data-label="Laravel" style="border-color: rgba(255, 45, 32, 0.4);">
+                    <img src="https://skillicons.dev/icons?i=laravel" alt="Laravel logo" />
+                  </div>
+                  <div class="tech-stack-icon" data-label="Tailwind" style="border-color: rgba(56, 189, 248, 0.4);">
+                    <img src="https://skillicons.dev/icons?i=tailwind" alt="Tailwind CSS logo" />
+                  </div>
+                  <div class="tech-stack-icon" data-label="React" style="border-color: rgba(97, 218, 251, 0.4);">
+                    <img src="https://skillicons.dev/icons?i=react" alt="React logo" />
+                  </div>
+                  <div class="tech-stack-icon" data-label="MySQL" style="border-color: rgba(0, 117, 255, 0.4);">
+                    <img src="https://skillicons.dev/icons?i=mysql" alt="MySQL logo" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="inline-block font-[sans-serif] font-medium text-white/80 font-light text-xs sm:text-[0.8rem] mt-[20px]">
+                Sejutabaitullah
+                <span class="text-white/50 font-regular"> 
+                    is an Umrah referral platform that automates commission distribution through an auditable system, 
+                    featuring an implemented ACID Ledger System and referral visualization to monitor network growth.
+                </span>
+            </div>
+            <div class="mt-6">
+              <div class="flex items-center justify-between">
+                <p class="text-xs uppercase tracking-[0.35em] text-white/70">Highlights</p>
+                <p class="text-xs text-white/60">Klik untuk memperbesar</p>
+              </div>
+              <div class="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-4">
+                <a class="gallery-lightbox block overflow-hidden rounded border border-white/5 bg-white/5" href="/public/assets/sejutabaitullah/Frame_3_1_hcpu3x_c_scale,w_507.png" data-gallery="sejutabaitullah-grid" data-glightbox="title:Dashboard overview" aria-label="View dashboard screenshot">
+                  <img src="/public/assets/sejutabaitullah/Frame_3_1_hcpu3x_c_scale,w_200.png" alt="Dashboard overview" class="h-[300px] w-full object-cover" />
+                </a>
+                <a class="gallery-lightbox block overflow-hidden rounded border border-white/5 bg-white/5" href="/public/assets/sejutabaitullah/Frame_2_1_ddjz5r_c_scale,w_516.png" data-gallery="sejutabaitullah-grid" data-glightbox="title:Referral tree" aria-label="View referral tree">
+                  <img src="/public/assets/sejutabaitullah/Frame_2_1_ddjz5r_c_scale,w_348.png" alt="Referral tree" class="h-[300px] w-full object-cover" />
+                </a>
+                <a class="gallery-lightbox block overflow-hidden rounded border border-white/5 bg-white/5" href="/public/assets/sejutabaitullah/Sejuta_Baitullah_1_lllgjp_c_scale,w_687.jpg" data-gallery="sejutabaitullah-grid" data-glightbox="title:Financial ledger" aria-label="View ledger overview">
+                  <img src="/public/assets/sejutabaitullah/Sejuta_Baitullah_1_lllgjp_c_scale,w_200.jpg" alt="Financial ledger" class="h-[300px] w-full object-cover" />
+                </a>
+                <a class="gallery-lightbox block overflow-hidden rounded border border-white/5 bg-white/5" href="/public/assets/sejutabaitullah/Sejuta_Baitullah_2_3_qmfs8m_c_scale,w_888.png" data-gallery="sejutabaitullah-grid" data-glightbox="title:Commission flow" aria-label="View commission flow">
+                  <img src="/public/assets/sejutabaitullah/Sejuta_Baitullah_2_3_qmfs8m_c_scale,w_200.png" alt="Commission flow" class="h-[300px] w-full object-cover" />
+                </a>
+              </div>
+            </div>
+
+            <h3 class="text-white text-base font-oswald mt-[20px] mb-[10px]">Key Achievements</h3>
+            <ul class="space-y-2 text-sm font-regular text-white/50">
+              <li class="flex items-start gap-2">
+                <span class="text-sm">-</span>
+                <div><span class="font-semibold text-white/80">Performance:</span> Zero critical bugs in production—leveraging AI-augmented workflows to deploy the financial ledger in just 1 week.</div>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-sm">-</span>
+                <div><span class="font-semibold text-white/80">Impact:</span> Protecting IDR 300M+ volume through real-time validation and audit trails.</div>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-sm">-</span>
+                <div><span class="font-semibold text-white/80">Result:</span> Accelerated business launch by deploying a stable platform in 1 week, enabling immediate commercial transactions for the company.</div>
+              </li>
+            </ul>
+
+            <h3 class="text-white text-base font-oswald mt-[20px] mb-[5px]">Problem 1 : </h3>
+            <div class="inline-block font-[sans-serif] font-medium text-white/80 font-light text-xs sm:text-[0.8rem] mt-[5px]">
+                <span class="text-white/50 font-regular"> 
+                    Business required a secure financial system to be live in 7 days without risking data discrepancies.
+                </span>
+            </div>
+
+            <h3 class="text-white text-base font-oswald mt-[10px] mb-[5px]">Solution : </h3>
+            <div class="inline-block font-[sans-serif] font-medium text-white/80 font-light text-xs sm:text-[0.8rem] mt-[5px]">
+                <span class="text-white/50 font-regular"> 
+                    Leveraged AI-augmented workflows—utilizing Claude AI for frontend development and Gemini 3 Pro to accelerate general coding—allowing me to focus on core architecture and complex referral algorithms. This strategic approach resulted in high-quality deployment, successfully meeting the production deadline ahead of schedule.
+                </span>
+            </div>
+            <div class="inline-block font-[sans-serif] font-medium text-white/80 font-light text-xs sm:text-[0.8rem] mt-[10px]">
+                <span class="text-white/50 font-regular"> 
+                    Strategic technology choices enabled the rapid development and deployment of a scalable, secure financial system. By leveraging the seamless integration of Laravel and Inertia.js, I achieved rapid iteration cycles and high-performance delivery while deliberately avoiding over-engineering to maintain system maintainability and focus on core business value.
+                </span>
+            </div>
+
+            <h3 class="text-white text-base font-oswald mt-[20px] mb-[5px]">Problem 2 : </h3>
+            <div class="inline-block font-[sans-serif] font-medium text-white/80 font-light text-xs sm:text-[0.8rem] mt-[5px]">
+                <p class="text-white/50 font-regular"> 
+                    Developing a complex commission system that splits a single transaction payment into multiple wallets—ranging from administrative wallets to user savings—while ensuring the system is manually auditable, fully logged, and maintains absolute data consistency. 
+                </p>
+            </div>
+
+            <h3 class="text-white text-base font-oswald mt-[10px] mb-[5px]">Solution : </h3>
+            <div class="inline-block font-[sans-serif] font-medium text-white/80 font-light text-xs sm:text-[0.8rem] mt-[5px]">
+                <p class="text-white/50 font-regular"> 
+                    <span class="text-white/80">Implemented an ACID Ledger System where every incoming transaction must strictly balance with allocated or outgoing funds.</span>  I engineered a dedicated Service Layer for fund orchestration to centralize management logic, ensuring all wallet movements are wrapped in database transactions for atomicity. 
+                </p>
+            </div>
+            <div class="inline-block font-[sans-serif] font-medium text-white/80 font-light text-xs sm:text-[0.8rem] mt-[10px]">
+                <p class="text-white/50 font-regular"> 
+                    <span class="text-white/80">Prevent race conditions and ensure idempotency during high-frequency wallet updates.</span> I utilized lockForUpdate and DB::Transaction mechanisms. This rigorous approach guarantees that every balance change is auditable and consistent, protecting the integrity of over IDR 300 million in user funds. 
+                </p>
+            </div>
+            <div class="mt-3 rounded border border-white/10 bg-black/40 p-3 text-xs max-h-[300px] font-mono overflow-x-auto">
+              <pre><code>/**
+     * Handles the complex multi-level split transaction from a single payment source.
+     * Orchestrates the fetching of amounts, validation, and creation of transactions.
+     *
+     * @param  Model  $user The user for whom the payment is being orchestrated.
+     * @param  Model  $paymentSource The source of the payment (e.g., PaymentGateway).
+     * @return Collection A collection of all created AccountTransaction models.
+     * @throws Exception
+     */
+    public function handle(Model $user, Model $paymentSource): Collection
+    {
+        return DB::transaction(function () use ($user, $paymentSource) {
+            $data = $this->prepareOrchestrationData($user);
+
+            // Jalankan validasi utama antara ammounts
+            $this->performValidation(
+                $paymentSource,
+                $data->amounts,
+                $data->totalReferralAmount,
+            );
+
+            // Buat / Ambil Administrasi Data
+            $adminAccounts = $this->getAdministrationAccounts();
+            $allTransactions = new Collection();
+
+            // Buat Product Asuransi User
+            $this->createUserInsurance($user, $data->insuranceProduct);
+
+            // Hanlde Transaksi Asuransi
+            $allTransactions->push(
+                $this->accountService->credit(
+                    $adminAccounts->insurance,
+                    $data->insuranceProduct->amount,
+                    AccountTransactionPurpose::INSURANCE,
+                    AccountTransactionStatus::COMPLETED,
+                    $paymentSource,
+                    "Pembayaran Asuransi " . $adminAccounts->insurance->name,
+                ),
+            );
+
+            // Handle Transaksi Simpanan Umroh
+            $allTransactions->push(
+                $this->accountService->credit(
+                    $data->userSavingUmroh,
+                    $data->amounts["saving_umroh"],
+                    AccountTransactionPurpose::SAVING_DEPOSIT,
+                    AccountTransactionStatus::COMPLETED,
+                    $paymentSource,
+                    "Pembayaran Simpanan Umroh",
+                ),
+            );
+
+            // Handle Transaksi Waqaf
+            $allTransactions->push(
+                $this->accountService->credit(
+                    $adminAccounts->waqf,
+                    $data->amounts["waqf"],
+                    AccountTransactionPurpose::WAQF,
+                    AccountTransactionStatus::COMPLETED,
+                    $paymentSource,
+                    "Pembayaran Wakaf",
+                ),
+            );
+
+            // Handle Transaksi Koperasi Fee
+            $allTransactions->push(
+                $this->accountService->credit(
+                    $adminAccounts->cooperative_fee,
+                    $data->amounts["cooperative_fee"],
+                    AccountTransactionPurpose::COOPERATIVE_FEE,
+                    AccountTransactionStatus::COMPLETED,
+                    $paymentSource,
+                    "Pembayaran Koperasi",
+                ),
+            );
+
+            // Handle Transaksi Koperasi Support Fee
+            $allTransactions->push(
+                $this->accountService->credit(
+                    $adminAccounts->cooperative_support_fee,
+                    $data->amounts["cooperative_support_fee"],
+                    AccountTransactionPurpose::COOPERATIVE_SUPPORT_FEE,
+                    AccountTransactionStatus::COMPLETED,
+                    $paymentSource,
+                    "Pembayaran Support Koperasi",
+                ),
+            );
+
+            // Handle Transaksi Referral Transaksi
+            $referralTransactions = $this->createReferralTransactions(
+                $data->referralAmountsSettings,
+                $data->referralTargets,
+                $paymentSource,
+            );
+            $allTransactions = $allTransactions->merge($referralTransactions);
+
+            // Handle Transaksi Komisi Sisa Referral
+            $remainderTransaction = $this->handleReferralRemainder(
+                $referralTransactions,
+                $paymentSource,
+            );
+            if ($remainderTransaction) {
+                $allTransactions->push($remainderTransaction);
+            }
+
+            // Jalankan Royalti
+            $allTransactions->push(
+                $this->accountService->credit(
+                    $adminAccounts->royalty,
+                    $data->amounts["royalty"],
+                    AccountTransactionPurpose::ROYALTY,
+                    AccountTransactionStatus::COMPLETED,
+                    $paymentSource,
+                    "Pembayaran Royalty",
+                ),
+            );
+
+            // Jalankan Bisnis Support Tranasksi
+            $allTransactions->push(
+                $this->accountService->credit(
+                    $adminAccounts->business_support,
+                    $data->amounts["business_support"],
+                    AccountTransactionPurpose::BUSINESS_SUPPORT,
+                    AccountTransactionStatus::COMPLETED,
+                    $paymentSource,
+                    "Pembayaran Bisnis Support",
+                ),
+            );
+
+            return $allTransactions;
+        });
+    }</code></pre>
+            </div>
+            <div class="inline-block font-[sans-serif] font-medium text-white/80 font-light text-xs sm:text-[0.8rem] mt-[10px]">
+                <p class="text-white/50 font-regular"> 
+                    <span class="text-white/80">The above code utilize below database design.</span> I implemented a poylmorphhic relation on the account_transactions_table resulting in easier to scale for a new feature and the table also act as a Ledger ensuring an auditable system. 
+                </p>
+            </div>
+            <div class="mt-4 rounded border border-white/10 bg-white/5 p-3 text-[0.7rem]">
+              <div class="mermaid leading-4">
+                erDiagram
+    payments {
+        BIGINT id PK
+        BIGINT user_id FK
+        DECIMAL amount(10)
+        VARCHAR status
+        VARCHAR payment_method
+        VARCHAR proof_of_payment
+        TEXT admin_notes
+        BIGINT approved_by FK
+        TIMESTAMP created_at
+        TIMESTAMP updated_at
+    }
+    savings {
+        BIGINT id PK
+        BIGINT user_id FK
+        BIGINT account_id FK
+        VARCHAR purpose
+        VARCHAR name
+        DECIMAL balance(13)
+        TIMESTAMP created_at
+        TIMESTAMP updated_at
+        TIMESTAMP deleted_at
+    }
+    account_transactions {
+        BIGINT id PK
+        VARCHAR purpose
+        TEXT purpose_text
+        BIGINT sourceable_id
+        VARCHAR sourceable_type
+        BIGINT targetable_id
+        VARCHAR targetable_type
+        DECIMAL amount(13)
+        TIMESTAMP created_at
+        TIMESTAMP updated_at
+        TIMESTAMP deleted_at
+    }
+    account_administration {
+        BIGINT id PK
+        VARCHAR name
+        DECIMAL balance(13)
+        VARCHAR purpose
+        TIMESTAMP created_at
+        TIMESTAMP updated_at
+        TIMESTAMP deleted_at
+    }
+    users {
+        BIGINT id PK
+    }
+    accounts {
+        BIGINT id PK
+    }
+
+    payments }|--|| users : "user_id"
+    payments }|--|| users : "approved_by"
+    savings }|--|| users : "user_id"
+    savings }|--|| accounts : "account_id"
+              </div>
+            </div>
+
+            <h3 class="text-white text-base font-oswald mt-[20px] mb-[5px]">Problem 3 : </h3>
+            <div class="inline-block font-[sans-serif] font-medium text-white/80 font-light text-xs sm:text-[0.8rem] mt-[5px]">
+                <span class="text-white/50 font-regular"> 
+                    Business need to visualize the referral tree, while ensuring the application performance optimize and also need for the referred user can easily be changes onto a different branch.
+                </span>
+            </div>
+
+            <h3 class="text-white text-base font-oswald mt-[10px] mb-[5px]">Solution : </h3>
+            <div class="inline-block font-[sans-serif] font-medium text-white/80 font-light text-xs sm:text-[0.8rem] mt-[5px]">
+                <span class="text-white/50 font-regular"> 
+                    I implemented below database design to handle the referral tree, where the closure table act as cache mechanism or closure table for the referral visualization, the problem with recursively through the user parent_referral_code is
+                    due to performance issues where the referral_path grow exponentially and the system would break due to O(n^2) time complexity while the closure table resulted in O(1) due to we can just select it directly through Mysql or Eloquent. 
+                </span>
+            </div>
+
+<div class="mt-4 rounded border border-white/10 bg-white/5 p-3 text-[0.7rem]">
+              <div class="mermaid leading-4">
+               
+erDiagram
+    users {
+        BIGINT id PK
+        VARCHAR name
+        VARCHAR email
+        VARCHAR phone_number
+        TEXT address
+        VARCHAR city
+        VARCHAR nik
+        VARCHAR account_bank_name
+        VARCHAR account_bank_number
+        VARCHAR role
+        VARCHAR referral_code
+        VARCHAR parent_referral_code
+        TIMESTAMP email_verified_at
+        VARCHAR password
+        VARCHAR remember_token
+        TIMESTAMP created_at
+        TIMESTAMP updated_at
+    }
+    referral_paths {
+        BIGINT ancestor_id FK
+        BIGINT descendant_id FK
+        INT depth
+    }
+
+    referral_paths }|..|| users : "ancestor_id"
+    referral_paths }|..|| users : "descendant_id"
+              </div>
+            </div>
+
+            <div class="inline-block font-[sans-serif] font-medium text-white/80 font-light text-xs sm:text-[0.8rem] mt-[10px]">
+                <span class="text-white/50 font-regular"> 
+                    By using above schema, the query for getting the referral data would look like below..
+                </span>
+            </div>
+
+            <div class="mt-3 rounded border border-white/10 bg-black/40 p-3 text-xs max-h-[300px] font-mono overflow-x-auto">
+              <pre><code>
+        // for querying specific downline
+        $descendantsQuery = ReferralPath::where("ancestor_id", $startUser->id)
+        ->where("depth", xx);
+
+        // for querying downline in range
+        $descendantsQuery = ReferralPath::where("ancestor_id", $startUser->id)
+        ->where("depth", '>=', xx);
+    </code></pre>
+            </div>
+
+            <div class="inline-block font-[sans-serif] font-medium text-white/80 font-light text-xs sm:text-[0.8rem] mt-[10px]">
+                <span class="text-white/50 font-regular"> 
+                    But lies another problem where, how can we redirect a user into another branch without recalculating the closure table, that's why i implemented below algorithm
+                    where it redirect all the existing downline of the current user closure table into the new referral upline and generating new one, and if the new referral_upline has depthness less than the old one 
+                    then delete it..
+                </span>
+            </div>
+
+            <div class="mt-3 rounded border border-white/10 bg-black/40 p-3 text-xs max-h-[300px] font-mono overflow-x-auto">
+              <pre><code>
+    /**
+     * Handle the logic for when a User's parent_referral_code is updated.
+     * Rebuilds referral paths for the user and their descendants.
+     */
+    public function updateUserReferralPaths(User $user, string $oldParentReferralCode, string $newParentReferralCode): void
+    {
+        
+        // Ambil semua descentdant id yang ada di bawah user saat ini dan group berdasarkan depth 
+        $groupedCurrentDescendants = ReferralPath::where("ancestor_id", $user->id)
+            ->whereNot('depth', 0)
+            ->pluck('depth')
+            ->toArray();
+            
+        $groupedCurrentDepths = array_count_values(array_count_values(array_keys($groupedCurrentDescendants)))[1] ?? 0;
+
+        $currentDescendant = ReferralPath::where("ancestor_id", $user->id)
+            ->whereNot('depth', 0)
+            ->pluck('descendant_id')
+            ->toArray();
+
+            
+        // Ambil jarak (depth) dari user ini ke parent yang baru
+        $old_parent = User::where('referral_code', $oldParentReferralCode)->first();
+        $new_parent = User::where('referral_code', $newParentReferralCode)->first();
+
+        // ambil cabang masing-masing parents yang baru dan lama..
+        $old_parents_tree = $old_parent->getUpperlines()->toArray();
+        $new_parents_tree = $new_parent->getUpperlines()->toArray();
+
+        // ambil kedalaman masing-masing parent untuk restrukturisasi
+        $depths_old_parents = array_count_values(array_count_values(array_keys($old_parents_tree)))[1] ?? 0;
+        $depths_new_parents = array_count_values(array_count_values(array_keys($new_parents_tree)))[1] ?? 0;
+
+        $relative_depths = 0;
+
+        // Pemindahan anak-anak dari current user ke cabang yang baru dari yang sudah ada sehingga 
+        // tidak perlu generate dari awal.
+        while($depths_new_parents > 0 && $depths_old_parents > 0) {
+            // ambil parents yang ada di kedalaman yang sekarang
+            $new_parent_on_current_depth = $new_parents_tree[array_key_last($new_parents_tree) - ($depths_new_parents - 1)];
+            $old_parent_on_current_depth = $old_parents_tree[array_key_last($old_parents_tree) - ($depths_old_parents - 1)];
+
+            // --- PENCEGAHAN INTEGRITY CONSTRAINT (USER) ---
+            // Sebelum update user ke ancestor baru, hapus jika relasi ke ancestor baru tersebut sudah ada (sampah data)
+            ReferralPath::where('ancestor_id', $new_parent_on_current_depth['id'])
+                ->where('descendant_id', $user->id)
+                ->delete();
+
+            // Update user itu sendiri
+            ReferralPath::where('ancestor_id', $old_parent_on_current_depth['id'])
+                ->where('descendant_id', $user->id)
+                ->whereNot('depth', 0)
+                ->update([
+                    'ancestor_id' => $new_parent_on_current_depth['id'],
+                    'descendant_parent_id' => $new_parent->id,
+                ]);
+            
+            // --- PENCEGAHAN INTEGRITY CONSTRAINT (DESCENDANTS) ---
+            // Sebelum update anak-anak, pastikan tidak ada data bentrok di ancestor tujuan
+            if (!empty($currentDescendant)) {
+                ReferralPath::where('ancestor_id', $new_parent_on_current_depth['id'])
+                    ->whereIn('descendant_id', $currentDescendant)
+                    ->delete();
+            }
+
+            // update referral path untuk anak-anak di kedalaman relative ke anak yang sekarang
+            ReferralPath::where('ancestor_id', $old_parent_on_current_depth['id'])
+                ->whereIn('descendant_id', $currentDescendant)
+                ->update([
+                    'ancestor_id' => $new_parent_on_current_depth['id'],
+                ]);
+
+            // incremental kedalaman relative ke anak
+            $relative_depths++;
+            $depths_new_parents--;
+            $depths_old_parents--;
+        }
+
+        // kalau misalnya masih ada sisa kedalaman dari new parents berarti mesti generate
+        // baru relative ke parent di ketinggian tersebut dan masih ada anak-anak yang harus dipindahkan
+        if ($depths_new_parents > 0 ) {
+
+            $relative_depths++;
+            
+            while($depths_new_parents > 0) {
+                $new_parent_on_current_depth = $new_parents_tree[array_key_last($new_parents_tree) - ($depths_new_parents - 1)];
+
+                // --- PENCEGAHAN INTEGRITY CONSTRAINT (CREATE SINGLE) ---
+                // Hapus data eksisting jika kombinasi ancestor & descendant ini sudah ada
+                ReferralPath::where('ancestor_id', $new_parent_on_current_depth['id'])
+                    ->where('descendant_id', $user->id)
+                    ->delete();
+
+                ReferralPath::create([
+                    "ancestor_id" => $new_parent_on_current_depth['id'],
+                    "descendant_id" => $user->id,
+                    "descendant_parent_id" => $new_parent->id,
+                    "depth" => $relative_depths,
+                ]);
+
+                // --- PENCEGAHAN INTEGRITY CONSTRAINT (INSERT USING) ---
+                // Hapus baris yang akan ditimpa oleh insertUsing
+                // Kita targetkan ancestor tujuan, dan descendant yang merupakan anak buah user saat ini
+                DB::table('referral_paths')
+                    ->where('ancestor_id', $new_parent_on_current_depth['id'])
+                    ->whereIn('descendant_id', function($q) use ($user) {
+                        $q->select('descendant_id')
+                          ->from('referral_paths')
+                          ->where('ancestor_id', $user->id)
+                          ->whereNot('depth', 0);
+                    })
+                    ->delete();
+
+                // Bangun query SELECT untuk mengambil data yang lama sebagai template
+                $query = DB::table('referral_paths')
+                    ->where('ancestor_id', $user->id) // Ambil semua hubungan di bawah user saat ini
+                    ->whereNot('depth', 0) // Kecuali depth 0 (dirinya sendiri)
+                    ->select([
+                        DB::raw("{$new_parent_on_current_depth['id']} as ancestor_id"), // Ganti ancestor ke parent baru
+                        'descendant_id',
+                        DB::raw("$user->id as descendant_parent_id"),
+                        DB::raw("depth + $relative_depths as depth") // Increment kedalamannya
+                    ]);
+
+                // Eksekusi INSERT sekaligus (Tanpa Loop PHP)
+                DB::table('referral_paths')->insertUsing(
+                    ['ancestor_id', 'descendant_id', 'descendant_parent_id', 'depth'], 
+                    $query
+                );
+                
+                $relative_depths++;
+                $depths_new_parents--;
+            };
+        }
+
+        // kalau misalnya old parents masih ada sisa dari hasil pemindahan cabang anak-anak nya
+        // maka berarti sisanya mesti di hapus,..
+        if ($depths_old_parents > 0) {
+            while($depths_old_parents > 0) {
+                $old_parent_on_current_depth = $old_parents_tree[array_key_last($old_parents_tree) - ($depths_old_parents - 1)];
+
+                // hapus referral path untuk anak-anak di kedalaman relative ke anak yang sekarang
+                ReferralPath::where('ancestor_id', $old_parent_on_current_depth['id'])
+                    ->whereIn('descendant_id', $currentDescendant)
+                    ->delete();
+
+                $depths_old_parents--;
+            }
+        }
+    }
+    </code></pre>
+            </div>
+
+
+          <!-- <div>
+            <ul class="mt-3 space-y-2 text-sm text-white/80">
+              <li class="flex items-start gap-2">
+                <span class="text-lg">🚀</span>
+                <span>Performance: Zero critical bugs in production—financial ledger deployed in 1 week.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-lg">⚡</span>
+                <span>Speed: AI-assisted CI/CD keeps PR-to-production in under 30 minutes.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-lg">💰</span>
+                <span>Impact: Protecting IDR 300M+ volume through real-time validation and audit trails.</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-white text-2xl font-oswald">🧩 The Problem</h3>
+            <p class="mt-3 text-white/80 text-sm">
+              Klien membutuhkan sistem referral Umrah yang bisa mendistribusikan komisi multi-level di waktu nyata, namun terbentur deadline ketat dan kebutuhan menjaga integritas dana dalam struktur pengguna yang sangat dalam.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-white text-2xl font-oswald">🛠️ Engineering Breakdown</h3>
+            <div class="mt-3 space-y-3 text-sm text-white/80">
+              <div class="rounded border border-white/10 bg-white/5 p-4">
+                <p class="font-semibold text-white">A. Architecture & DevOps (Infrastructure)</p>
+                <p class="mt-2">Pindah dari monolitik berantakan ke monorepo containerized dengan Docker Swarm agar tiap layanan dapat berskala horizontal dengan konfigurasi yang konsisten.</p>
+              </div>
+              <div class="rounded border border-white/10 bg-white/5 p-4">
+                <p class="font-semibold text-white">B. Algorithmic Solution (Logic)</p>
+                <p class="mt-2">Menggunakan Closure Table Pattern untuk referral tree multi-level, mengubah query kompleks menjadi SELECT tunggal yang waktu eksekusinya mendekati konstanta.</p>
+              </div>
+              <div class="rounded border border-white/10 bg-white/5 p-4">
+                <p class="font-semibold text-white">C. Data Integrity (Reliability)</p>
+                <p class="mt-2">Menjaga ACID dengan double-entry ledger; setiap pergerakan dana adalah debit/kredit dalam satu transaksi MySQL sehingga data selalu auditable.</p>
+              </div>
+            </div>
+          </div> -->
+          <!-- <div>
+            <h3 class="text-white text-2xl font-oswald">💻 Code Snippet / Visual</h3>
+            <div class="mt-3 rounded border border-white/10 bg-black/40 p-3 text-xs font-mono overflow-x-auto">
+              <pre><code>INSERT INTO referral_closure
+    (ancestor_id, descendant_id, depth)
+  SELECT ancestor_id, new_user_id, depth + 1
+  FROM referral_closure WHERE descendant_id = referrer_id;</code></pre>
+            </div>
+            <p class="mt-2 text-white/60 text-[0.8rem]">Figure: Closure Table insertion keeps downline expansion constant time.</p>
+          </div> -->
+        </div>
+       </div>
+
+      <!-- END BLOG CONTENT -->
+
+    </div>
+  </div>
+</section>
