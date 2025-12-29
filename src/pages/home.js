@@ -12,6 +12,14 @@ import Stats from "three/examples/jsm/libs/stats.module";
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader';
 import { TransformControls } from "three/examples/jsm/controls/TransformControls.js";
 import Typed from 'typed.js';
+import GLightbox from "glightbox";
+import "glightbox/dist/css/glightbox.css";
+import mermaid from "mermaid";
+
+mermaid.initialize({
+  startOnLoad: false,
+  theme: "dark",
+});
 
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 const loader = new GLTFLoader();
@@ -589,6 +597,43 @@ export async function InitPage(resolve = null) {
   const closeButton = document.getElementById("close-button");
   const newPageContent = document.getElementById("new-page-content");
 
+  let overlayLightboxInstance = null;
+
+  function initOverlayLightbox(context) {
+    if (!context) return;
+
+    const galleryTargets = context.querySelectorAll(".gallery-lightbox");
+    if (!galleryTargets.length) return;
+
+    if (overlayLightboxInstance) {
+      overlayLightboxInstance.destroy();
+    }
+
+    overlayLightboxInstance = GLightbox({
+      selector: ".gallery-lightbox",
+      touchNavigation: true,
+      loop: true,
+      closeButton: true,
+    });
+  }
+
+  function renderMermaidDiagrams(context) {
+    if (!context) return;
+    const mermaidBlocks = context.querySelectorAll(".mermaid");
+    if (!mermaidBlocks.length) return;
+
+    mermaidBlocks.forEach((block) => {
+      mermaid.init(undefined, block);
+    });
+  }
+
+  function destroyOverlayLightbox() {
+    if (overlayLightboxInstance) {
+      overlayLightboxInstance.destroy();
+      overlayLightboxInstance = null;
+    }
+  }
+
   /**
    * Asynchronous function to handle the page transition.
    * It's triggered when an a tag with `data-page-link` is clicked.
@@ -634,6 +679,8 @@ export async function InitPage(resolve = null) {
 
       // Inject the fetched content into the new page content container
       newPageContent.innerHTML = htmlContent;
+      initOverlayLightbox(newPageContent);
+      renderMermaidDiagrams(newPageContent);
 
       // Hide the skeleton loader and show the new content
       loader.classList.add("hidden");
@@ -658,6 +705,7 @@ export async function InitPage(resolve = null) {
    * Function to close the overlay and return to the main page.
    */
   function closePage() {
+    destroyOverlayLightbox();
     gsap.to(overlay, {
       y: "100vh", // Slide the overlay down and off the screen
       duration: 0.8,
